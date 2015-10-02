@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 class ViewController: UIViewController {
   let sliderResetValue = 50
@@ -77,6 +78,12 @@ class ViewController: UIViewController {
     round = 0;
     score = 0;
     startNewRound()
+    
+    let transition = CATransition()
+    transition.type = kCATransitionFade
+    transition.duration = 1
+    transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+    view.layer.addAnimation(transition, forKey: nil)
   }
 
   
